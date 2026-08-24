@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
+import {  Phone, Mail, Clock, MessageCircle } from "lucide-react";
 import SectionHeading from "../components/ui/SectionHeading";
 
 interface ContactForm {
