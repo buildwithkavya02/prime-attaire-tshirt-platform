@@ -1,0 +1,92 @@
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700,800&f[]=general-sans@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-bg text-ink font-body antialiased;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #C8A165;
+  color: #3E2723;
+}
+
+/* premium scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #F8F5F2; }
+::-webkit-scrollbar-thumb { background: #D8CFC7; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #C8A165; }
+
+@layer base {
+  h1, h2, h3, h4 {
+    @apply font-display text-ink;
+    letter-spacing: -0.02em;
+  }
+  :focus-visible {
+    outline: 2px solid #C8A165;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .container-lux {
+    @apply mx-auto w-full max-w-[1320px] px-6 md:px-10;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-[11px] md:text-xs font-semibold tracking-[0.28em] uppercase text-gold;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-all duration-500 ease-premium;
+    background: #3E2723;
+    color: #F8F5F2;
+  }
+  .btn-primary:hover {
+    background: #2a1a16;
+    box-shadow: 0 14px 34px -10px rgba(62,39,35,0.55);
+    transform: translateY(-2px);
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-brown-dark/20 bg-transparent px-7 py-3.5 text-sm font-semibold text-ink transition-all duration-500 ease-premium hover:border-brown-dark/60;
+  }
+  .btn-secondary:hover {
+    transform: translateY(-2px);
+    background: rgba(62,39,35,0.04);
+  }
+  .card-premium {
+    @apply rounded-xl3 border border-line/70 bg-white/70 backdrop-blur-sm shadow-soft;
+  }
+  .glass {
+    background: rgba(248, 245, 242, 0.72);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+  }
+  .input-lux {
+    @apply w-full rounded-xl2 border border-line bg-bg px-5 py-3.5 text-sm text-ink placeholder:text-muted/70 outline-none transition-colors duration-300;
+  }
+  .input-lux:focus {
+    @apply border-gold;
+  }
+  .text-gradient-gold {
+    background: linear-gradient(90deg, #C8A165, #8D6E63);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
